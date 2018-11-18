@@ -21,6 +21,14 @@ public class AutoTDA {
         this.exitTime = "Undefined";
     }
 
+    public AutoTDA () {
+        id = "";
+        enterTime = "";
+        exitTime = "";
+        enterPoint = 0;
+        exitPoint = 0;
+    }
+
     public String getId() {
         return id;
     }

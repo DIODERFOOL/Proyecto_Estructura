@@ -12,31 +12,6 @@ public class CasetaTDA {
         this.casetaID = casetaID;
         this.casetaNodo = casetaNodo;
     }
-
-    public String getCasetaID () {
-        return casetaID;
-    }
-
-    public void setCasetaID (String casetaID) {
-        this.casetaID = casetaID;
-    }
-
-    public int getEntradasT () {
-        return entradasT;
-    }
-
-    public void setEntradasT (int entradasT) {
-        this.entradasT = entradasT;
-    }
-
-    public int getSalidasT () {
-        return salidasT;
-    }
-
-    public void setSalidasT (int salidasT) {
-        this.salidasT = salidasT;
-    }
-
     public void enterCar (AutoTDA auto) {
         if (autosEnterCaseta.getFirst() == null) {
             autosEnterCaseta.addFirst(auto);
