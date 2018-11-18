@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public class AutoTDA {
     private String id;
     private String enterTime;
@@ -5,10 +7,11 @@ public class AutoTDA {
     private int enterPoint;
     private int exitPoint;
 
-    public AutoTDA(String id, String enterTime, String exitTime) {
-        this.id = id;
+    public AutoTDA(String enterTime, int enterPoint) {
+        id = UUID.randomUUID().toString();;
+        this.enterPoint = enterPoint;
         this.enterTime = enterTime;
-        this.exitTime = exitTime;
+        this.exitTime = null;
     }
 
     public String getId() {
@@ -49,5 +52,16 @@ public class AutoTDA {
 
     public void setExitPoint(int exitPoint) {
         this.exitPoint = exitPoint;
+    }
+
+    @Override
+    public String toString() {
+        return "AutoTDA{" +
+                "id='" + id + '\'' +
+                ", enterTime='" + enterTime + '\'' +
+                ", exitTime='" + exitTime + '\'' +
+                ", enterPoint=" + enterPoint +
+                ", exitPoint=" + exitPoint +
+                '}';
     }
 }
