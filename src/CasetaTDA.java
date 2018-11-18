@@ -4,13 +4,13 @@ public class CasetaTDA {
     private LinkedList<AutoTDA> autosEnterCaseta = new LinkedList<AutoTDA>();
     private LinkedList<AutoTDA> autosExitCaseta  = new LinkedList<AutoTDA>();
     private String casetaID;
-    private int casetaP;
+    private int casetaNodo;
     private int entradasT;
     private int salidasT;
 
-    public CasetaTDA(String casetaID, int casetaP) {
+    public CasetaTDA(String casetaID, int casetaNodo) {
         this.casetaID = casetaID;
-        this.casetaP = casetaP;
+        this.casetaNodo = casetaNodo;
     }
 
     public String getCasetaID () {
@@ -57,13 +57,13 @@ public class CasetaTDA {
 
     public void resumenCaseta () {
         System.out.println("Resumen de las entradas de la caseta: " + casetaID);
-        for (int i = 0; i < autosEnterCaseta.size(); i++) {
-            System.out.println( autosEnterCaseta.get(i).toString() );
+        for (AutoTDA anAutosEnterCaseta : autosEnterCaseta) {
+            System.out.println(anAutosEnterCaseta.toString());
         }
         System.out.println("En total entraron: " + entradasT + " por esta caseta");
         System.out.println("Resumen de las salidas de la caseta: " + casetaID);
-        for (int i = 0; i < autosExitCaseta.size(); i++) {
-            System.out.println( autosExitCaseta.get(i).toString() );
+        for (AutoTDA anAutosExitCaseta : autosExitCaseta) {
+            System.out.println(anAutosExitCaseta.toString());
         }
         System.out.println("En total salieron: " + entradasT + " por esta caseta");
     }

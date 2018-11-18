@@ -1,17 +1,24 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Objects;
 import java.util.UUID;
 
 public class AutoTDA {
+    private SimpleDateFormat timeF = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss\"");
+    private Date fechaH = new Date();
     private String id;
     private String enterTime;
     private String exitTime;
     private int enterPoint;
     private int exitPoint;
 
-    public AutoTDA(String enterTime, int enterPoint) {
-        id = UUID.randomUUID().toString();;
+
+    public AutoTDA(int enterPoint, int exitPoint) {
+        id = UUID.randomUUID().toString();
         this.enterPoint = enterPoint;
-        this.enterTime = enterTime;
-        this.exitTime = null;
+        this.exitPoint = exitPoint;
+        this.enterTime = timeF.format(fechaH);
+        this.exitTime = "Undefined";
     }
 
     public String getId() {
@@ -26,32 +33,25 @@ public class AutoTDA {
         return enterTime;
     }
 
-    public void setEnterTime(String enterTime) {
-        this.enterTime = enterTime;
-    }
-
     public String getExitTime() {
         return exitTime;
-    }
-
-    public void setExitTime(String exitTime) {
-        this.exitTime = exitTime;
     }
 
     public int getEnterPoint() {
         return enterPoint;
     }
 
-    public void setEnterPoint(int enterPoint) {
-        this.enterPoint = enterPoint;
-    }
-
     public int getExitPoint() {
         return exitPoint;
     }
 
-    public void setExitPoint(int exitPoint) {
-        this.exitPoint = exitPoint;
+    public AutoTDA crearAuto (int enterPoint, int exitPoint) {
+        return new AutoTDA(enterPoint, exitPoint);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(timeF, fechaH, getId(), getEnterTime(), getExitTime(), getEnterPoint(), getExitPoint());
     }
 
     @Override
