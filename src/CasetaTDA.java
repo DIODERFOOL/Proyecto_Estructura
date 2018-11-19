@@ -12,6 +12,7 @@ public class CasetaTDA {
         this.casetaID = casetaID;
         this.casetaNodo = casetaNodo;
     }
+
     public void enterCar (AutoTDA auto) {
         if (autosEnterCaseta.getFirst() == null) {
             autosEnterCaseta.addFirst(auto);
