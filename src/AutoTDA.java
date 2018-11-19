@@ -64,7 +64,7 @@ public class AutoTDA {
 
     @Override
     public String toString() {
-        return "AutoTDA{" +
+        return "El carro {" +
                 "id='" + id + '\'' +
                 ", enterTime='" + enterTime + '\'' +
                 ", exitTime='" + exitTime + '\'' +
